@@ -1,0 +1,29 @@
+# Site settings
+title: Forest Anderson
+brand: Code & Cappuccinos
+header-img: img/backpack.png
+email: codeandcappuccinos@gmail.com
+copyright_name: Code & Cappuccinos
+description: "A blog with an author who loves to code, and drink cappuccinos."
+baseurl: ""
+url: "http://www.codeandcappuccinos.com/"
+twitter_username: "@codeandcapps"
+instagram_username: codeandcapps
+github_username:  l3rittny
+facebook_username:  Brittny Lapierre
+email_username:  "codeandcappuccinos@gmail.com"
+future: false
+
+# Google Analytics
+# To enable google analytics, uncomment below line with a valid Google Tracking ID
+# google_tracking_id:
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+paginate_path: "/blog/page:num/"
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed, jekyll-seo-tag]
