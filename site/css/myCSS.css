@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+.btn-zoomshift {
+ 	background-color: hsl(0, 84%, 65%) !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f59393", endColorstr="#f05a5a");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#f59393), to(#f05a5a));
+	background-image: -moz-linear-gradient(top, #f59393, #f05a5a);
+	background-image: -ms-linear-gradient(top, #f59393, #f05a5a);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f59393), color-stop(100%, #f05a5a));
+	background-image: -webkit-linear-gradient(top, #f59393, #f05a5a);
+	background-image: -o-linear-gradient(top, #f59393, #f05a5a);
+	background-image: linear-gradient(#f59393, #f05a5a);
+	border-color: #f05a5a #f05a5a hsl(0, 84%, 62%);
+	color: #FFF !important;
+	text-shadow: 1px 1px 0 #E34141;
+	-webkit-font-smoothing: antialiased;
+}
+
+.btn-basecamp {
+  	background-image: none;
+	background: #fff;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: 0px 1px 0px #ddd;
+	-moz-box-shadow: 0px 1px 0px #ddd;
+	box-shadow: 0px 1px 0px #ddd;
+}
+.btn-basecamp:hover {
+	background: #fff;
+}
+
+.btn-geckoboard {
+	background: #7EB348;
+	background-image: none;
+	border:none;
+	color: #fff;
+	letter-spacing: 1px;
+	font-weight: 600;
+	text-decoration: none ! important;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease-in-out 0s;		
+	-webkit-transition: all 0.3s ease-in-out 0s;		
+}
+.btn-geckoboard:hover {
+	background: #333;
+	color: #fff;
+}
