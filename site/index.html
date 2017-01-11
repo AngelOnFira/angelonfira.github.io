@@ -4,14 +4,37 @@
 include navbar.html
 <body>
 <div id = "mainContent">
-<img src="img/profle1.jpg" alt="" width="298" height="300" class="img-rounded img-responsive center-block"/>
-<h1 class="text-center">Forest Anderson</h1>
+  <div id="carousel1" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel1" data-slide-to="1"></li>
+      <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active"><img src="img/profile1.jpg" alt="First slide image" width="298" height="300" class="img-rounded img-responsive center-block">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item"><img src="img/profile2.jpg" alt="Second slide image" width="298" height="300" class="img-rounded img-responsive center-block">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item"><img src="img/profile3.jpg" alt="Third slide image" width="298" height="300" class="img-rounded img-responsive center-block">
+        <div class="carousel-caption">
+        </div>
+      </div>
+    </div>
+<h1 class="text-center" style = "padding-top: 10%;">Forest Anderson</h1>
 <h4 style = "text-align: center;">A Game and Software Developer Attending Carleton University in Ottawa</h4>
-<h3 style = "margin-top: 150px;background-color: #161616;min-height: 60;color: white; padding: 20px;">Game Development</h3>
-<h4 style = "padding-left: 40px; padding-bottom: 80px;">Interested in Image Processing, Procedural Generation, and Netcode</h4>
-<h3 style = "background-color: #161616;min-height: 60;color: white; padding: 20px;">Software Development</h3>
-<h4 style = "padding-left: 40px; padding-bottom: 80px;">Interested in ...</h4>
+<h3 style = "margin-top: 150px;background-color: #161616;color: white; padding: 20px;">Game Development</h3>
+<h3 style = "padding-left: 40px;">Interested in Image Processing, Procedural Generation, and Netcode</h3>
+<h4 style = "padding-left: 80px;">Blox Heroes</h4>
+<h4 style = "padding-left: 80px;">Blox Heroes</h4>
+<h3 style = "background-color: #161616;color: white; padding: 20px;">Software Development</h3>
+<h3 style = "padding-left: 40px;">Interested in Web Development, App Development, and Machine Learning</h3>
 include footer.html
 </div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>

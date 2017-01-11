@@ -9,9 +9,6 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-body {
-  margin: 0;
-}
 article,
 aside,
 details,
@@ -60,8 +57,8 @@ dfn {
   font-style: italic;
 }
 h1 {
-  margin: .67em 0;
-  font-size: 2em;
+	margin: .67em 0;
+	font-size: 250%;
 }
 mark {
   color: #000;
@@ -188,13 +185,10 @@ th {
   padding: 0;
 }
 #mainContent {
-	width: 900px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 80px;
-	padding-right: 0;
-	padding-left: 0;
-	padding-bottom: 0;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 100px 0 0 0;
 	background-color: white;
 	text-align: left;
 	min-height: 600px;
@@ -1111,7 +1105,6 @@ html {
 }
 body {
 	font-family: brawler;
-	font-size: 14px;
 	line-height: 1.42857143;
 	color: #333;
 	background-color: white;
@@ -1119,6 +1112,13 @@ body {
 	font-style: normal;
 	font-weight: 400;
 }
+
+body{
+	font-size: 16px;
+}
+body{font-size: 110%}
+@media(min-width:60em){body{font-size: 140%}}
+
 
 
 input,
@@ -1305,11 +1305,11 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 150%;
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 125%;
 }
 h5,
 .h5 {
@@ -6275,7 +6275,7 @@ button.close {
   position: relative;
   width: 100%;
   overflow: hidden;
-}
+	}
 .carousel-inner > .item {
   position: relative;
   display: none;
