@@ -11,17 +11,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- include css -->
-	<link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
   <!-- include meter JS script -->
   <script src="assets/js/meter.js"></script>
   <!-- include scrollspy JS script -->
   <script src="assets/js/scrollspy.js"></script>
-	<title>Forest Anderson</title>
+  <title>Forest Anderson</title>
 </head>
 <body data-spy="scroll" data-target="#main-navbar" data-offset="58">
   <!-- NOTE: the this is used to detect bootstrap media changes in JS -->
   <div class="device-xs d-block d-sm-none"></div>
-
   <!-- define navbar -->
   <nav id="main-navbar" class="navbar navbar-light fixed-top bg-light">
     <a class="navbar-brand" href="#">Forest Anderson</a>
@@ -40,7 +39,6 @@
       </li>
     </ul>
   </nav>
-
   <!-- mobile navbar layout -->
   <input type="checkbox" id="main-navicon"/>
   <div id="main-navbar" class="navicon-container">
@@ -51,6 +49,9 @@
     <ul class="sidebar">
       <li class="nav-item">
         <a class="nav-link" href="#profile">About me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#resume">Resume</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#experience">Experience</a>
@@ -66,7 +67,6 @@
       </li>
     </ul>
   </div>
-
   <!-- define initial title pane -->
   <div class="title">
     <div class="title-overlay">
@@ -76,7 +76,6 @@
       </div>
     </div>
   </div>
-
   <!-- define profile pane -->
   <div id="profile" class="profile">
     <div class="container">
@@ -90,7 +89,7 @@
           <p>
             I'm a 3rd year computer science student at Carleton University, with honours in Game Development.<br/><br/>
             I have done research in the field of image processing at Carleton.
-            I am currently working with Scholarpro as a Full Stack Developer.<br/><br/>
+            I am currently working at Scholarpro as a Full Stack Developer.<br/><br/>
             I have many sideprojects that I have worked on. Some topics I'm interested in include web scrapers, graphics, and security.<br/><br/>
             I co-host the Lame Jam, a game jam at Carleton University.
             I have been an executive member of the Carleton Computer Science Society for two years.
@@ -99,123 +98,197 @@
       </div>
     </div>
   </div>
-
   <!-- define content to contain main sections -->
   <div class="content">
-    <!-- define experience pane -->
-    <div id="experience" class="experiences">
-      <div class="container">
-        <h2>Experience</h2>
-        <hr>
-        <!-- Experience -->
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <h4>Scholarpro</h4>
-            <p>
-              December 2017 - Present
-            </p>
-          </div>
-          <div class="col-lg-8">
-            <strong>Full Stack Developer</strong>
-            <ul>
-              <li><span>Created a MongoDB database to keep track of</span></li>
-            <ul>
-          </div>
+  <!-- define experience pane -->
+  <div id="experience" class="experiences">
+    <div class="container">
+      <h2>Experience</h2>
+      <hr>
+      <!-- Experience -->
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <h4>Scholarpro</h4>
+          <p>
+            December 2017 - Present
+          </p>
         </div>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <h4>Children's Hospital of Eastern Ontario</h4>
-            <p>
-              June 2017 - Present
-            </p>
-          </div>
-          <div class="col-lg-8">
-            <strong>Summer Research Student</strong>
-            <ul>
-              <li><span>Worked with the Pathology lab to create procedurally generated 3D maps of the placenta</span></li>
-            <ul>
-          </div>
+        <div class="col-lg-8">
+          <strong>Full Stack Developer</strong>
+          <ul>
+          <li><span>Working on a website to match students to applicable scholarships</span></li>
+          <li><span>Using the Meteor framework for Node.js to build the site</span></li>
+          <li><span>Creating and managing a MongoDB database that holds the scholarships</span></li>
+          <ul>
         </div>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <h4>Graphics, Imaging, and Games Lab</h4>
-            <p>
-              May 2016 - August 2016
-            </p>
-          </div>
-          <div class="col-lg-8">
-            <strong>Dean’s Summer Research Internship Student</strong>
-            <ul>
-              <li><span>Created a pebble mosaic filter for digital photos.</span></li>
-              <li><span>The code was written in C++, and is used as a pipeline between a digital photo and a Carleton graduate student’s potential field
-                thesis. First, the original photo would be segmented, then each region would be sent to the potential field code, making each
-                region smoother, and look like a pebble. All of the new smoothed regions give an effect of a mosaic.</span></li>
-              <li><span>Written in C++, made use of OpenCV to manage and process the images</span></li>
-            <ul>
-          </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <h4>Children's Hospital of Eastern Ontario</h4>
+          <p>
+            June 2017 - Present
+          </p>
         </div>
-        <!-- End of Experience -->
+        <div class="col-lg-8">
+          <strong>Summer Research Student</strong>
+          <ul>
+          <li><span>Worked with the Pathology lab to create cross sections of procedurally generated models of the placenta</span></li>
+          <li><span>Used OpenGL and C++ to create the cross sections</span></li>
+          <ul>
+        </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <h4>Graphics, Imaging, and Games Lab</h4>
+          <p>
+            May 2016 - August 2016
+          </p>
+        </div>
+        <div class="col-lg-8">
+          <strong>Dean’s Summer Research Internship Student</strong>
+          <ul>
+          <li><span>Created a pebble mosaic filter for digital photos</span></li>
+          <li><span>Written in C++, made use of OpenCV to manage and process the images</span></li>
+          <ul>
+        </div>
+      </div>
+      <div class="col-lg-12 text-center">
+        <a href="resume/Resume.pdf" target="_blank">
+          <h3>Here is a link to my resume</h3>
+        </a>
       </div>
     </div>
-
-    <!-- define projects pane -->
-    <div id="projects" class="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <hr>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <img src="assets/images/projects/operation-skullrain.png" class="img-fluid img-thumbnail" alt="Operation Skullrain" >
-          </div>
-          <div class="col-lg-8">
+  </div>
+  <!-- define projects pane -->
+  <div id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/cuhlogo.png" class="img-fluid img-thumbnail" alt="CUHacking App" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://github.com/JackMc/COMP3004" target="_blank">
+            <h4>CUHacking App</h4>
+          </a>
+          <p>
+            Fall 2017
+          </p>
+          <strong>Ruby on Rails, Android Studio</strong>
+          <ul>
+          <li><span>Created for Carleton’s Hackathon. It will help participants navigate around the university as well as stay in contact with the organizers</span></li>
+          <li><span>Worked as the backend deveoper on a four-person team</span></li>
+          <ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/operation-skullrain.png" class="img-fluid img-thumbnail" alt="Operation Skullrain" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://github.com/Ershany/Operation_Skullrain" target="_blank">
             <h4>Operation Skullrain</h4>
-            <p>
-              Fall 2017
-            </p>
-            <strong>C++, OpenGL</strong>
-            <ul>
-              <li><span>A helicopter shooter themed game built outside of an engine</span></li>
-              <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
-            <ul>
-          </div>
-        </div>
-        <hr>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <img src="assets/images/projects/bloxheroes.jpg" class="img-fluid img-thumbnail" alt="Blox Heroes" >
-          </div>
-          <div class="col-lg-8">
-            <h4>Blox Heroes</h4>
-            <p>
-              2009 - 2015
-            </p>
-            <strong>Blitz 3D</strong>
-            <ul>
-              <li><span>Created a helicopter shooter themed game</span></li>
-              <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
-            <ul>
-          </div>
-        </div>
-        <hr>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <img src="assets/images/projects/blank.png" class="img-fluid img-thumbnail" alt="Blox Heroes" >
-          </div>
-          <div class="col-lg-8">
-            <h4>_[Blank]</h4>
-            <p>
-              Jan 2016
-            </p>
-            <strong>Superpowers, Typescript</strong>
-            <ul>
-              <li><span>Created a helicopter shooter themed game</span></li>
-              <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
-            <ul>
-          </div>
+          </a>
+          <p>
+            Fall 2017
+          </p>
+          <strong>C++, OpenGL</strong>
+          <ul>
+          <li><span>A helicopter shooter themed game built outside of an engine</span></li>
+          <li><span>Worked on a three-person development team</span></li>
+          <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
+          <ul>
         </div>
       </div>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/light-out.png" class="img-fluid img-thumbnail" alt="Light Out" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://globalgamejam.org/2017/games/lightout" target="_blank">
+            <h4>Light Out</h4>
+          </a>
+          <p>
+            January 2017
+          </p>
+          <strong>Godot, GDScript</strong>
+          <ul>
+          <li><span>A game built using the Godot engine</span></li>
+          <li><span>Worked on a three-person development team</span></li>
+          <li><span>Worked on the game mechanics and graphics</span></li>
+          <ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/pebbles.png" class="img-fluid img-thumbnail" alt="Pebble Mosaic" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://pebblemosaicblog.wordpress.com/" target="_blank">
+            <h4>Pebble Mosaic</h4>
+          </a>
+          <p>
+            Summer 2016
+          </p>
+          <strong>C++, OpenCV</strong>
+          <ul>
+          <li><span>Created a pebble mosaic filter for digital photos</span></li>
+          <li><span>Written in C++, made use of OpenCV to manage and process the images</span></li>
+          <li><span>Done at the Graphics, Images and Games Lab at Carleton University</span></li>
+          <ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/blank.png" class="img-fluid img-thumbnail" alt="Blank" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://globalgamejam.org/2016/games/blank" target="_blank">
+            <h4>_[Blank]</h4>
+          </a>
+          <p>
+            Jan 2016
+          </p>
+          <strong>Superpowers, Typescript</strong>
+          <ul>
+          <li><span>Created a helicopter shooter themed game</span></li>
+          <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
+          <li><span>Created for the Global Game Jam</span></li>
+          <ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-around">
+        <div class="location col-lg-4">
+          <img src="assets/images/projects/bloxheroes.jpg" class="img-fluid img-thumbnail" alt="Blox Heroes" >
+        </div>
+        <div class="col-lg-8">
+          <a href="https://github.com/AngelOnFira/oldbloxheros" target="_blank">
+            <h4>Blox Heroes</h4>
+          </a>
+          <p>
+            2009 - 2015
+          </p>
+          <strong>Blitz 3D</strong>
+          <ul>
+          <li><span>Created a helicopter shooter themed game</span></li>
+          <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
+          <ul>
+        </div>
+      </div>
+      <hr>
+      <div class="col-lg-12 text-center">
+        <a href="resume/Resume.pdf" target="_blank">
+          <h3>Here is a link to my resume</h3>
+        </a>
+      </div>
     </div>
-
+  </div>
   <!-- define contact footer pane -->
   <div id="contact" class="contact bg-dark">
     <div class="container">
@@ -224,20 +297,20 @@
       <div class="row">
         <div class="col-md-12 col-lg-4">
           <a href="mailto:forestkzanderson@gmail.com">
-            <img src="assets/contact/at.svg">
-            <span>forestkzanderson@gmail.com</span>
+          <img src="assets/contact/at.svg">
+          <span>forestkzanderson@gmail.com</span>
           </a>
         </div>
         <div class="col-md-12 col-lg-4">
           <a href="https://github.com/AngelOnFira" target="_blank">
-            <img src="assets/contact/github-square.svg">
-            <span>github.com/AngelOnFira</span>
+          <img src="assets/contact/github-square.svg">
+          <span>github.com/AngelOnFira</span>
           </a>
         </div>
         <div class="col-md-12 col-lg-4">
           <a href="https://www.linkedin.com/in/forest-anderson" target="_blank">
-            <img src="assets/contact/linkedin-square.svg">
-            <span>linkedin.com/in/forest-anderson</span>
+          <img src="assets/contact/linkedin-square.svg">
+          <span>linkedin.com/in/forest-anderson</span>
           </a>
         </div>
       </div>
