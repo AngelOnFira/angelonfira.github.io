@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-LightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-BoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-ExtraBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('/font/Raleway-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.noselect:focus {
+    outline: 0
+}
+
+.noselect>:focus {
+    outline: 0
+}
+
+/* hovers */
+.navOption:hover {
+    color: #FFA42C;
+}
+#navSocials .navSocial:hover > * {
+    fill: #FFA42C;
+}
+#aboutSocials .navSocial:hover > * {
+    fill: #fff;
+}
+#workHeader .bottom:hover #workGithubToggle, #workHeader .bottom:hover ~ .divider {
+    background: #FFA42C;
+}
+.workToggle.click, .workToggle:hover {
+    background: #AF272F;
+    color: #090909;
+}
+
+
+/* in view */
+.work.INVIEW .workBottomBorder, .work.INVIEW .workTopBorder {
+    opacity: 1;
+}
+
+
+
+/* hi-light animations */
+.work.INVIEW .hi-light {
+    animation: anim-in-layer .3s ease forwards;
+}
+.work.INVIEW .hi-light:before {
+    animation: anim-in-text .3s ease forwards;
+}
+.job.click .hi-light, .job:hover .hi-light {
+    animation: anim-in-layer .3s ease forwards;
+}
+.job.click .hi-light:before, .job:hover .hi-light:before {
+    animation: anim-in-text .3s ease forwards;
+}
+@keyframes anim-in-text {
+0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); }
+to {
+    -webkit-transform: translateZ(0); } 
+}
+@keyframes anim-in-layer {
+0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); } 
+}
+
+
+#canvasText {
+    animation: fadeToCenter 1.2s ease 0.9s 1 forwards;
+}
+#navList {
+    animation: fadeIn 1.2s ease 1.05s 1 forwards;
+}
+#navSocials {
+    animation: fadeIn 1.2s ease 1.2s 1 forwards;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeToCenter {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -1,388 +1,1274 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <!-- include Open Sans font -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-  <!-- include Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <!-- include Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- include css -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <!-- include meter JS script -->
-  <script src="assets/js/meter.js"></script>
-  <!-- include scrollspy JS script -->
-  <script src="assets/js/scrollspy.js"></script>
-  <title>Forest Anderson</title>
+    <meta charset="utf8" />
+    <meta http-equiv="Content-Language" content="en_CA" />
+    <meta property="og:url" content="https://www.ericbellamy.ca/site/forest" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:title" content="Forest Anderson - Backend Developer" />
+    <meta property="og:description" content="A developer specializing in image processing and backend development." />
+    <meta property="og:image" content="" />
+    <meta name="keywords" content="forest anderson, forestanderson, person, software developer, software engineer, ottawa, canada, carleton, carleton university" />
+    <title>Forest Anderson - Backend Developer</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <style>
+    *,
+    html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        vertical-align: top;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        font-family: 'Lato', sans-serif;
+        /* font-family: 'Raleway', 'Lato', sans-serif; */
+        font-weight: 400;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .center-s {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #displayContainer {
+        height: 100vh;
+        width: 100%;
+        font-size: 110%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #canvasContainer {
+        height: 100vh;
+    }
+
+    #canvasContainer canvas {
+        height: 100%;
+        width: 100%;
+    }
+
+
+
+    #canvasText {
+        color: #fff;
+        font-size: 200%;
+        width: 100%;
+        text-align: center;
+        padding: 0 40px;
+
+        left: 50%;
+        top: 50%;
+        opacity: 1;
+        transform: translate(-50%, -44%);
+    }
+
+    #canvasTitle {
+        font-size: 200%;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+
+    .pageContent {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    #navContainer {
+        color: #fff;
+    }
+
+    #navList {
+        list-style-type: none;
+        display: flex;
+        float: right;
+        font-size: 120%;
+        padding: 0 20px;
+
+        opacity: 0;
+    }
+
+    .navOption {
+        padding: 20px;
+        transition: color .2s ease;
+        cursor: pointer;
+    }
+    
+
+    #navSocials {
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
+        opacity: 0;
+    }
+
+    .navSocial {
+        display: block;
+    }
+
+    .navSocial:nth-child(n + 2) {
+        margin-top: 8px;
+    }
+
+    .navSocial>* {
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: #fff;
+        transition: fill .2s ease;
+    }
+
+    .githubSocial svg {
+        padding: 1px;
+    }
+
+    #canvasBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+    }
+
+    #displayContainer,
+    #canvasBackground {
+        background: linear-gradient(to bottom, #AF272F, #000);
+    }
+
+    #displayContainer {
+        background: linear-gradient(to bottom, #7C1C21, #000 86%);
+    }
+    #canvasBackground {
+        background: linear-gradient(to bottom, #AF272F, #000 98%);
+    }
+    /* ABOUT SECTION */
+
+    #aboutContainer {
+        padding: 80px 40px 240px 40px;
+        background: #000;
+    }
+
+    #aboutContent {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    #aboutHeader {
+        display: flex;
+        justify-content: center;
+        vertical-align: bottom;
+    }
+
+    #aboutHeader .left {
+        width: 320px;
+        height: 320px;
+        border: 2px solid #AF272F;
+        overflow: hidden;
+    }
+
+    #aboutHeader .left img {
+        width: 100%;
+        height: auto;
+    }
+
+    #aboutHeader .right {
+        flex: 1;
+        font-size: 110%;
+        padding: 0 40px;
+        position: relative;
+    }
+
+    /* ABOUT ICONS */
+    #aboutSocials {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;   
+    }
+    #aboutSocials .navSocial > * {
+        fill: #ccc;
+    }
+    
+
+
+    /* NAME AND JOB TITLE */
+    #aboutDescs {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        padding: 10px 40px;
+    }
+    #aboutJob span {
+        color: #FFA42C;
+    }
+    #aboutTitle {
+        font-size: 200%;
+        margin-bottom: 10px;
+        color: #AF272F;
+    }
+    #aboutDesc {
+        line-height: 1.4;
+        color: #e3e3e3;
+    }
+
+
+    #aboutBody {
+        display: flex;
+        margin-top: 60px;
+    }
+
+    #aboutBody .left {
+        flex: 1;
+    }
+    #aboutBody .title {
+        color: #AF272F;
+        margin-bottom: 10px;
+    }
+
+    #aboutBody .right {
+        margin-left: 80px;
+        width: 240px;
+    }
+
+    #aboutBody .aboutList {
+        color: #aaa;
+    }
+
+    .aboutList .title {
+        color: #AF272F;
+    }
+
+    .aboutList li {
+        margin-bottom: 10px;
+    }
+
+    .aboutList>li:nth-child(n + 2) {
+        font-size: 90%;
+    }
+    /* WORK CONTAINER */
+
+    #workContainer {
+        padding: 160px 40px;
+        background: #040404;
+        border-top: 1px solid #090909;
+        color: #fff;
+    }
+    #workContainer .pageContent {
+        max-width: 1000px;
+    }
+
+    .workList {
+        display: none;
+    }
+    .softwareList #softwareList, .gamedevList #gamedevList {
+        display: block;
+    }
+
+
+    #workHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start
+    }
+    #workHeader .top, #workHeader .bottom {
+        position: relative;
+    }
+    #workHeader .top {
+        width: 100%;
+    }
+    #workHeader .bottom {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: inline-block;
+        order: 1;
+    }
+    
+    #workHeader .divider {
+        background: #AF272F;
+        width: 100%;
+        height: 2px;
+        transition: background .25s ease;
+    }
+    #workHeaderDesc {
+        font-size: 200%;
+        padding: 20px 20px;
+    }
+    #workToggles {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+    }
+    .workToggle {
+        cursor: pointer;
+        padding: 12px 20px;
+        color: #fff;
+        transition: background .25s ease, color .2s ease;
+        transform: translate3d(0,0,0);
+    }
+    #workGithubToggle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #AF272F;
+        color: #090909;
+        display: block;
+    }
+
+    .work {
+        width: 100%;
+        display: flex;
+        margin: 60px 0;
+        padding: 60px 40px;
+        position: relative;
+    }
+    .workList > .work:last-child {
+        margin-bottom: 0;
+    }
+    
+    .workBottomBorder, .workTopBorder {
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity .6s ease;
+    }
+    .workBottomBorder:before, .workBottomBorder:after, .workTopBorder:before, .workTopBorder:after {
+        content: '';
+        position: absolute;
+        background: #AF272F;
+    }
+    .workBottomBorder:before, .workBottomBorder:after {
+        left: 0;
+        bottom: 0;
+    }
+    .workBottomBorder:before {
+        height: 20%;
+        width: 2px;
+    }
+    .workBottomBorder:after {
+        width: 20%;
+        height: 2px;
+    }
+
+    .workTopBorder:before, .workTopBorder:after {
+        top: 0;
+        right: 0;
+    }
+    .workTopBorder:before {
+        height: 20%;
+        width: 2px;
+    }
+    .workTopBorder:after {
+        width: 20%;
+        height: 2px;
+    }
+
+
+    .workImg {
+        width: 320px;
+        margin-right: 60px;
+    }
+
+    .workImg img {
+        width: 100%;
+        height: auto;
+    }
+    /* WORK RIGHT COL */
+
+    .workContent {
+        flex: 1;
+    }
+
+    .workTitle {
+        font-size: 200%;
+        font-weight: 600;
+        position: relative;
+        color: #aaa;
+        overflow: hidden;
+        display: inline-block;
+    }
+    .workTitle .hi-light:before {
+        font-weight: 600;
+    }
+
+    .workSubtitle {
+        opacity: 0.8;
+        line-height: 1.6;
+        margin: 5px 0 20px 0;
+    }
+    .workLanguages {
+        font-weight: 600;
+        color: #FB3844;
+    }
+
+    .workContent .list {
+        color: #ccc;
+    }
+    .list {
+        margin-left: 14px;
+    }
+
+    .list li {
+        margin: 10px 0;
+    }
+
+
+    /* JOB SECTION */
+    #jobContainer {
+        background: #111;
+        color: #fff;
+    }
+    #jobList {
+        overflow: hidden;
+        border-top: 1px solid #333;
+    }
+    .job {
+
+        background: #090909;
+        color: #bbb;
+        border-bottom: 1px solid #333;
+        cursor: pointer;
+    }
+    .jobContent {
+        padding: 60px 40px;
+    }
+    .jobDesc {
+        flex: 1;
+        padding: 0 60px 60px 60px;
+        color: #bbb;
+    }
+    .job.click .jobContent {
+        padding-bottom: 10px;
+    }
+
+    .jobContent, .jobDesc {
+        width: 100%;
+        max-width: 1520px;
+        margin: 0 auto;
+        display: flex;
+    }
+    .jobContent > *{
+        flex: 1;
+        padding: 0 20px;
+    }
+    .jobContent > .shortDate {
+        display: none;
+    }
+    .jobContent > .dateContainer, .jobContent > .positionContainer, .jobContent > .shortDate {
+        position: relative;
+        max-width: 20%;
+    }
+    .jobContent > .dateContainer > *, .jobContent > .shortDate > *, .jobContent > .positionContainer > * {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(0, -50%);
+    }
+
+    .companyContainer {
+        padding: 0 40px 0 20px;
+    }
+
+    /* LEFT COL */
+    .job .name {
+        display: inline-block;
+        font-size: 180%;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+    }
+    .job .name .hi-light:before {
+        font-weight: 500;
+    }
+    .hi-light:before {
+        content:attr(data-text);
+        position: absolute;
+        color: #fff;
+        transform: translate3d(100%, 0, 0);
+        transition: transform .3s ease;
+        backface-visibility: hidden;
+    }
+
+    .hi-light {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: inherit;
+        overflow: hidden;
+        width: 100%;
+        display: block;
+        height: 100%;
+        transform: translate3d(-100%, 0, 0);
+    }
+    .job .date {
+        font-size: 100%;
+    }
+    .jobDesc {
+        display: none;
+        padding-top: 20px;
+    }
+    .job.click .jobDesc {
+        display: block;
+    }
+    .jobDesc li {
+        padding: 4px;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+
+    #contactContainer {
+        height: 100vh;
+        background: #090909;
+        position: relative;
+        padding: 160px;
+    }
+    #contactWrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        color: #AF272F;
+    }
+
+    /* CONTACT CENTER TEXT */
+    #contactCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        width: 100%;
+        max-width: 360px;
+    }
+    #contactBody {
+        font-size: 120%;
+    }
+    #contactBody .title {
+        font-size: 130%;
+    }
+
+    #contactLinks {
+        margin-top: 80px;
+        padding-top: 20px;
+        padding: 20px 20px 0 20px;
+        position: relative;
+    }
+    #contactLinks:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 40%;
+        background: #AF272F;
+    }
+    #contactLinks:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16%;
+        height: 1px;
+        background: #AF272F;
+    }
+    #contactLinks a {
+        text-decoration: none;
+        padding: 0 10px;
+        color: #AF272F;
+    }
+
+    #contactBody a {
+        color: #FB3844;
+        text-decoration: none;
+    }
+
+    /* CONTACT TOP BORDER */
+    #contactTop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: #AF272F;
+        display: flex;
+        align-items: center;
+    }
+    #contactIcon {
+        width: 36px;
+        height: 36px;
+    }
+    #contactTitle {
+        position: relative;
+        padding: 0 10px;
+        margin: 0 20px;
+        font-size: 160%;
+    }
+    #contactTitle:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 200%;
+        height: 2px;
+        background: #AF272F;
+    }
+    #contactTitle .text {
+        position: relative;
+        padding: 0 10px;
+        z-index: 1;
+        background: #090909;
+    }
+
+    /* CONTACT BOTTOM BORDER */
+    #contactBottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    #contactBottom:before, #contactBottom:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #AF272F;
+    }
+    #contactBottom:before {
+        width: 200px;
+        height: 2px;
+    }
+    #contactBottom:after {
+        width: 2px;
+        height: 40px;
+    }
+
+    .credit {
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        font-size: 75%;
+        color: #666;
+        text-align: center;
+    }
+
+    .credit a {
+        color: #AF272F;
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 900px){
+        body #canvasText {
+            font-size: 3.5vw;
+        }
+        body #workContainer {
+            padding-bottom: 120px;
+        }
+        body .work {
+            flex-direction: column;
+            margin: 80px 0;
+        }
+        body .workImg {
+            margin: 0;
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            max-height: 400px;
+        }
+        body .workContent {
+            margin-top: 40px;
+        }
+        body .workContent .list {
+            margin-top: 20px;
+        }
+        body .workContent .list li {
+            padding: 10px 0;
+        }
+        .jobContent > .dateContainer {
+            display: none;
+        }
+        .jobContent > .shortDate {
+            display: block;
+        }
+        .jobContent > .positionContainer {
+            max-width: 25%;
+        }
+    }
+    @media screen and (max-width: 800px){
+        body #aboutContainer {
+            padding-bottom: 160px;
+        }
+        body #aboutHeader {
+            flex-direction: column;
+        }
+        body #aboutHeader .left {
+            width: 100%;
+            height: auto;
+            max-width: 480px;
+            max-height: 480px;
+        }
+        body #aboutHeader .right {
+            margin: 40px 0;
+            padding: 0;
+        }
+        body #aboutDescs {
+            position: static;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        body #aboutSocials {
+            top: 0;
+        }
+        body #aboutBody {
+            margin: 0;
+            flex-direction: column;
+        }
+        body #aboutBody .right {
+            margin-top: 40px;
+            margin-left: 0;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        body .workContent .list {
+            margin-top: 20px;
+            margin-left: 0;
+        }
+    }
+    @media screen and (max-width: 700px){
+        #navList {
+            float: none;
+            justify-content: center;
+        }
+        body #aboutContainer {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        body #workContainer, body .work {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        body #workHeaderDesc {
+            font-size: 160%;
+        }
+
+        /* Change border system for work tiles */
+        body .work {
+            border-bottom: 1px solid #AF272F;
+        }
+        body .workList > .work:last-child {
+            border-bottom: none;
+        }
+        body .workList .work .workBottomBorder, body .workList .work .workTopBorder {
+            opacity: 0;
+        }
+
+        .job .name {
+            font-size: 140%;
+        }
+        body #canvasSubtitle {
+            font-size: 120%;
+        }
+        body #contactContainer {
+            padding: 80px;
+        }
+        body #navSocials {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 600px){
+        body #navList {
+            font-size: 90%;
+        }
+        body #workHeaderDesc {
+            font-size: 200%;
+            padding: 10px;
+            margin-bottom: 80px;
+        }
+        body .work {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        body .workToggle {
+            font-size: 80%;
+        }
+
+        body .jobContent {
+            padding-right: 10px;
+            padding-left: 10px;
+            flex-direction: column;
+        }
+        body .jobContent > .shortDate {
+            margin-top: 20px;
+        }
+        body .jobContent > .shortDate, body .jobContent > .positionContainer {
+            max-width: none;
+        }
+        body .jobContent .date, body .jobContent .position {
+            position: static;
+            transform: none;
+            padding: 10px 0;
+        }
+
+        body #contactBottom {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 520px){
+        body #navList {
+            font-size: 80%;
+        }
+        body #aboutSocials {
+            display: none;
+        }
+        .job .name {
+            font-size: 140%;
+        }
+        body #contactContainer {
+            padding: 40px;
+        }
+        body #contactTitle:before {
+            width: 120%;
+        }
+    }
+    @media screen and (max-width: 480px){
+        body #navList {
+            font-size: 70%;
+        }
+    }
+    </style>
 </head>
-<body data-spy="scroll" data-target="#main-navbar" data-offset="58">
-  <!-- NOTE: the this is used to detect bootstrap media changes in JS -->
-  <div class="device-xs d-block d-sm-none"></div>
-  <!-- define navbar -->
-  <nav id="main-navbar" class="navbar navbar-light fixed-top bg-light">
-    <a class="navbar-brand" href="#">Forest Anderson</a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link" href="#profile">About me</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#experience">Experience</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- mobile navbar layout -->
-  <input type="checkbox" id="main-navicon"/>
-  <div id="main-navbar" class="navicon-container">
-    <div class="navicon-navbar fixed-top">
-      <a class="brand" href="#">Forest Anderson</a>
-    </div>
-    <label for="main-navicon" class="label"></label>
-    <ul class="sidebar">
-      <li class="nav-item">
-        <a class="nav-link" href="#profile">About me</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#resume">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#experience">Experience</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#skills">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-  <!-- define initial title pane -->
-  <div class="title">
-    <div class="title-overlay">
-      <div class="container">
-        <h1>FOREST ANDERSON</h1>
-        <h3>Game and Software Developer</h3>
-      </div>
-    </div>
-  </div>
-  <!-- define profile pane -->
-  <div id="profile" class="profile">
-    <div class="container">
-      <h2>About me</h2>
-      <hr>
-      <div class="row justify-content-around align-items-center">
-        <div class="profile-background col-lg-4">
-          <img src="assets/images/forest/profile2.jpg" alt="" class="profile-image">
+
+<body>
+    <nav>
+        <div id='navContainer'>
+            <div id='navSocials' class='noselect'>
+                <a class='navSocial githubSocial' href='https://github.com/AngelOnFira' target='_blank'>
+                    <div class='svg' src='/sites/forest/ic/social-github.svg'></div>
+                </a>
+                <a class='navSocial' href='https://www.linkedin.com/in/forest-anderson/' target='_blank'>
+                    <div class='svg' src='/sites/forest/ic/social-linkedin.svg'></div>
+                </a>
+            </div>
+            <ul id='navList'>
+                <li class='navOption' data-name='about'>About</li>
+                <li class='navOption' data-name='work'>Projects</li>
+                <li class='navOption' data-name='job'>Experience</li>
+                <li class='navOption' data-name='contact'>Contact</li>
+            </ul>
         </div>
-        <div class="bio col-lg-8">
-          <p>
-            I'm a 4th year computer science student at Carleton University, with honours in Game Development.<br/><br/>
-            I have done research at Carleton in the field of image processing.<br/><br/>
-            I have many sideprojects that I have worked on. Some topics I'm interested in include web scrapers, graphics, and security.<br/><br/>
-            I co-lead the Lame Jam, a game jam at Carleton University.<br/>
-            I co-lead Hack All The Things, an Ottawa-based security competition.<br/>
-            I have been an executive member of the Carleton Computer Science Society for four years.
-          </p>
+    </nav>
+    <section id='displayContainer'>
+        <div id='canvasContainer'>
+            <div id='canvasBackground'></div>
+            <div class='center-s' id='canvasText'>
+                <div id='canvasTitle'>Forest Anderson</div>
+                <div id='canvasSubtitle'>Game and Software Developer</div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- define content to contain main sections -->
-  <div class="content">
-  <!-- define experience pane -->
-  <div id="experience" class="experiences">
-    <div class="container">
-      <h2>Experience</h2>
-      <hr>
-      <!-- Experience -->
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <h4>Scholarpro</h4>
-          <p>
-            December 2017 - Febuary 2017
-          </p>
+    </section>
+    <section id='aboutContainer'>
+        <div id='aboutContent' class='pageContent'>
+            <div id='aboutHeader'>
+                <div class='left'>
+                    <img data-lazysrc='/sites/forest/img/opt/profile2.jpg' />
+                </div>
+                <div class='right'>
+                    <div id='aboutSocials' class='noselect'>
+                        <a class='navSocial githubSocial' href='https://github.com/AngelOnFira' target='_blank'>
+                            <div class='svg' src='/sites/forest/ic/social-github.svg'></div>
+                        </a>
+                        <a class='navSocial' href='https://www.linkedin.com/in/forest-anderson/' target='_blank'>
+                            <div class='svg' src='/sites/forest/ic/social-linkedin.svg'></div>
+                        </a>
+                    </div>
+                    <div id='aboutDescs'>
+                        <div id='aboutJob'>Developer at <span>Timsle</span></div>
+                        <div id='aboutTitle'>Forest Anderson</div>
+                    </div>
+                </div>
+            </div>
+            <div id='aboutBody'>
+                <div class='left'>
+                    <div class='title'>Summary</div>
+                    <div id='aboutDesc'>
+                        I'm a 4th year computer science student at Carleton University, with honours in Game Development. I have done research at Carleton in the field of image processing. I have many sideprojects that I have worked on. Some topics I'm interested in include web scrapers, graphics, and security.
+                        <br>
+                        <br> I co-lead the Lame Jam, a game jam at Carleton University. I co-lead Hack All The Things, an Ottawa-based security competition. I have been an executive member of the Carleton Computer Science Society for four years.
+                    </div>
+                </div>
+                <div class='right'>
+                    <ul class='aboutList'>
+                        <li class='title'>Volunteer</li>
+                        <li>Treasurer of Carleton Computer Science Society</li>
+                        <li>Co-leader of Hack All the Things Ottawa</li>
+                        <li>Co-leader of the Carleton Lame Jam</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-8">
-          <strong>Full Stack Developer</strong>
-          <ul>
-          <li><span>Worked on a website to match students with applicable scholarships</span></li>
-          <li><span>Used the <b>Meteor</b> framework for <b>Node.js</b> to build the site</span></li>
-          <li><span>Created and managed a <b>MongoDB</b> database that holds the scholarships</span></li>
-          <ul>
+    </section>
+    <section id='workContainer' class='softwareList'>
+        <div class='pageContent'>
+            <div id='workHeader'>
+                <div class='top'>
+                    <div id='workHeaderDesc'>Recent Projects</div>
+                    <div id='workToggles'>
+                        <div class='workToggle click' data-name='software'>Software</div>
+                        <div class='workToggle' data-name='gamedev'>Game Dev</div>
+                    </div>
+                </div>
+                <div class='bottom'>
+                    <a class='workToggle' id='workGithubToggle' href='https://www.github.com/AngelOnFira' target='_blank'>Github</a>
+                </div>
+                <div class='divider'></div>
+            </div>
+            <div id='softwareList' class='workList'>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/miraclemerchant.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/AngelOnFira/Miracle-Merchant-AI' target='_blank'>Miracle Merchant AI<div class='hi-light' data-text="Miracle Merchant AI"></div></a>
+                        <div class='workSubtitle'>Jan 2018 - April 2018</div>
+                        <div class='workLanguages'>Python, Jupyter Notebook, Plotly</div>
+                        <ul class='list'>
+                            <li>- An AI created for the mobile game "Miracle Merchant"</li>
+                            <li>- Created in Python with data visualization done using Plotly and Jupyter Notebook</li>
+                            <li>- Worked as the backend deveoper on a four-person team</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/cuhlogo.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/JackMc/COMP3004' target='_blank'>CUHacking App<div class='hi-light' data-text="CUHacking App"></div></a>
+                        <div class='workSubtitle'>Fall 2017</div>
+                        <div class='workLanguages'>Ruby on Rails, Android Studio, Heroku</div>
+                        <ul class='list'>
+                            <li>- Created for Carleton’s Hackathon. It will help participants navigate around the university as well as stay in contact with the organizers</li>
+                            <li>- Created and managed the database, which was built with Ruby On Rails. The database is stored on Heroku</li>
+                            <li>- Worked as the backend deveoper on a four-person team</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/daemonic-sword.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/AngelOnFira/daemonic-sword-website' target='_blank'>Daemonic Sword Website<div class='hi-light' data-text="Daemonic Sword Website"></div></a>
+                        <div class='workSubtitle'>Fall 2017 - Present</div>
+                        <div class='workLanguages'>HTML, CSS</div>
+                        <ul class='list'>
+                            <li>- Designed the new website</li>
+                            <li>- Refactored the layout of the website</li>
+                            <li>- Removed outdated information</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/carleton.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/AngelOnFira/course-selection' target='_blank'>Course Selection Tool<div class='hi-light' data-text="Course Selection Tool"></div></a>
+                        <div class='workSubtitle'>April 2017 - Present</div>
+                        <div class='workLanguages'>Flask, Ruby, Python, Javascript, HTML, CSS, MongoDB, AWS</div>
+                        <ul class='list'>
+                            <li>- A tool that allows students to sign up for courses more easily</li>
+                            <li>- Students can seach for courses using an autocomplete searchbox</li>
+                            <li>- Sample timetables can be made and easily changed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id='gamedevList' class='workList'>
+                <div class='work INVIEW'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/forced-divided.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/AngelOnFira/forces-divided' target='_blank'>Forces Divided<div class='hi-light' data-text="Forces Divided"></div></a>
+                        <div class='workSubtitle'>Jan 2018 - April 2018</div>
+                        <div class='workLanguages'>Unity, C#</div>
+                        <ul class='list'>
+                            <li>- An RTS game build in Unity</li>
+                            <li>- Worked on game mechanics and managing the 3-person team</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/operation-skullrain.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://github.com/Ershany/Operation_Skullrain' target='_blank'>Operation Skullrain<div class='hi-light' data-text="Operation Skullrain"></div></a>
+                        <div class='workSubtitle'>Fall 2017</div>
+                        <div class='workLanguages'>C++, OpenGL</div>
+                        <ul class='list'>
+                            <li>- A helicopter shooter themed game built outside of an engine</li>
+                            <li>- Worked on a three-person development team</li>
+                            <li>- Worked on the game mechanics as well as integrating the models and their physics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/light-out.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://globalgamejam.org/2017/games/lightout' target='_blank'>Light Out<div class='hi-light' data-text="Light Out"></div></a>
+                        <div class='workSubtitle'>Fall 2017 - Present</div>
+                        <div class='workLanguages'>Godot, GDScript</div>
+                        <ul class='list'>
+                            <li>- Created for the Global Game Jam 2017</li>
+                            <li>- Worked on a three-person development team</li>
+                            <li>- Worked on the game mechanics and graphics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/pebbles.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://pebblemosaicblog.wordpress.com/' target='_blank'>Pebble Mosaic<div class='hi-light' data-text="Pebble Mosaic"></div></a>
+                        <div class='workSubtitle'>Summer 2016</div>
+                        <div class='workLanguages'>C++, OpenCV</div>
+                        <ul class='list'>
+                            <li>- Created a pebble mosaic filter for digital photos</li>
+                            <li>- Written in C++, made use of OpenCV to manage and process the images</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='work'>
+                    <div class='workBottomBorder'></div>
+                    <div class='workTopBorder'></div>
+                    <div class='workImg'>
+                        <img data-lazysrc='/sites/forest/img/opt/blank.jpg' />
+                    </div>
+                    <div class='workContent'>
+                        <a class='workTitle' href='https://globalgamejam.org/2016/games/blank' target='_blank'>_[Blank]<div class='hi-light' data-text="_[Blank]"></div></a>
+                        <div class='workSubtitle'>Jan 2016</div>
+                        <div class='workLanguages'>Superpowers, Typescript</div>
+                        <ul class='list'>
+                            <li>- Created for the Global Game Jam 2016</li>
+                            <li>- Worked on a five-person development team</li>
+                            <li>- Worked on the game physics and design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <h4>Children's Hospital of Eastern Ontario</h4>
-          <p>
-            June 2017 - August 2017
-          </p>
+    </section>
+    <section id='jobContainer'>
+        <div id='jobList'>
+            <div class='job noselect'>
+                <div class='jobContent'>
+                    <div class='companyContainer'>
+                        <div class='name'>
+                            Timsle
+                            <div class='hi-light' data-text="Timsle"></div>
+                        </div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>February 2018</div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>Present</div>
+                    </div>
+                    <div class='shortDate'>
+                        <div class='date'>2018</div>
+                    </div>
+                    <div class='positionContainer'>
+                        <div class='position'>Backend Developer</div>
+                    </div>
+                </div>
+                <div class='jobDesc'>
+                    <div class='list'>
+                        <li>Worked on a website to match students with applicable scholarships</li>
+                        <li>Used the Meteor framework for Node.js to build the site</li>
+                        <li>Created and managed a MongoDB database that holds the scholarships</li>
+                    </div>
+                </div>
+            </div>
+            <div class='job noselect'>
+                <div class='jobContent'>
+                    <div class='companyContainer'>
+                        <div class='name'>
+                            Scholarpro
+                            <div class='hi-light' data-text="Scholarpro"></div>
+                        </div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>December 2017</div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>Febuary 2017</div>
+                    </div>
+                    <div class='shortDate'>
+                        <div class='date'>2017</div>
+                    </div>
+                    <div class='positionContainer'>
+                        <div class='position'>Full Stack Developer</div>
+                    </div>
+                </div>
+                <div class='jobDesc'>
+                    <div class='list'>
+                        <li>Worked on a website to match students with applicable scholarships</li>
+                        <li>Used the Meteor framework for Node.js to build the site</li>
+                        <li>Created and managed a MongoDB database that holds the scholarships</li>
+                    </div>
+                </div>
+            </div>
+            <div class='job'>
+                <div class='jobContent'>
+                    <div class='companyContainer'>
+                        <div class='name'>
+                            Children's Hospital of Eastern Ontario
+                            <div class='hi-light' data-text="Children's Hospital of Eastern Ontario"></div>
+                        </div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>June 2017</div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>August 2017</div>
+                    </div>
+                    <div class='shortDate'>
+                        <div class='date'>2017</div>
+                    </div>
+                    <div class='positionContainer'>
+                        <div class='position'>Summer Research Student</div>
+                    </div>
+                </div>
+                <div class='jobDesc'>
+                    <div class='list'>
+                        <li>Worked with the Pathology lab to create cross sections of procedurally generated models of the placenta</li>
+                        <li>Used OpenGL and C++ to create the cross sections</li>
+                    </div>
+                </div>
+            </div>
+            <div class='job'>
+                <div class='jobContent'>
+                    <div class='companyContainer'>
+                        <div class='name'>
+                            Graphics, Imaging, and Games Lab
+                            <div class='hi-light' data-text="Graphics, Imaging, and Games Lab"></div>
+                        </div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>May 2016</div>
+                    </div>
+                    <div class='dateContainer'>
+                        <div class='date'>August 2016</div>
+                    </div>
+                    <div class='shortDate'>
+                        <div class='date'>2016</div>
+                    </div>
+                    <div class='positionContainer'>
+                        <div class='position'>Dean’s Summer Research Internship Student</div>
+                    </div>
+                </div>
+                <div class='jobDesc'>
+                    <div class='list'>
+                        <li>Created a pebble mosaic filter for digital photos</li>
+                        <li>Written in C++, made use of OpenCV to manage and process the images</li>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-8">
-          <strong>Summer Research Student</strong>
-          <ul>
-          <li><span>Worked with the Pathology lab to create cross sections of procedurally generated models of the placenta</span></li>
-          <li><span>Used <b>OpenGL</b> and <b>C++</b> to create the cross sections</span></li>
-          <ul>
+    </section>
+    <section id='contactContainer'>
+        <div id='contactWrapper'>
+            <div id='contactTop'>
+                <div id='contactIcon' class='svg' src='/sites/forest/ic/contact.svg'></div>
+                <div id='contactTitle'>
+                    <div class='text'>Contact</div>
+                </div>
+            </div>
+            <div id='contactCenter'>
+                <div id='contactText'>
+                    <div id='contactBody'>
+                        <div class='title'>Got an interesting project or idea?</div>
+                        <br>
+                        Send me a <a href='mailto:forestkzanderson@gmail.com'>message.</a>
+                    </div>
+                    <div id='contactLinks'>
+                        <a href='https://www.github.com/AngelOnFira'>Github</a>
+                        <a href='https://www.linkedin.com/in/forest-anderson/'>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div id='contactBottom'></div>
         </div>
-      </div>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <h4>Graphics, Imaging, and Games Lab</h4>
-          <p>
-            May 2016 - August 2016
-          </p>
-        </div>
-        <div class="col-lg-8">
-          <strong>Dean’s Summer Research Internship Student</strong>
-          <ul>
-          <li><span>Created a pebble mosaic filter for digital photos</span></li>
-          <li><span>Written in <b>C++</b>, made use of <b>OpenCV</b> to manage and process the images</span></li>
-          <ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- define projects pane -->
-  <div id="projects" class="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <hr>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <img src="assets/images/projects/miraclemerchant.jpg" class="img-fluid img-thumbnail" alt="Miracle Merchant AI" >
-          </div>
-          <div class="col-lg-8">
-            <a href="https://github.com/AngelOnFira/Miracle-Merchant-AI" target="_blank">
-              <h4>Miracle Merchant AI</h4>
-            </a>
-            <p>
-              Jan 2018 - April 2018
-            </p>
-            <strong>Python, Jupyter Notebook, Plotly</strong>
-            <ul>
-            <li><span>An AI created for the mobile game "Miracle Merchant"</span></li>
-            <li><span>Created in <b>Python</b> with data visualization done using <b>Plotly</b> and <b>Jupyter Notebook</b></span></li>
-            <li><span>Worked as the backend deveoper on a four-person team</span></li>            
-            <ul>
-          </div>
-        </div>
-      <hr>
-        <div class="row justify-content-around">
-          <div class="location col-lg-4">
-            <img src="assets/images/projects/forced-divided.PNG" class="img-fluid img-thumbnail" alt="Forces Divided" >
-          </div>
-          <div class="col-lg-8">
-            <a href="https://github.com/AngelOnFira/forces-divided" target="_blank">
-              <h4>Forces Divided</h4>
-            </a>
-            <p>
-              Jan 2018 - April 2018
-            </p>
-            <strong>Unity, C#</strong>
-            <ul>
-            <li><span>An RTS game build in <b>Unity</b></span></li>
-            <li><span>Worked on game mechanics and managing the 3-person team</span></li>           
-            <ul>
-          </div>
-        </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/cuhlogo.png" class="img-fluid img-thumbnail" alt="CUHacking App" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://github.com/JackMc/COMP3004" target="_blank">
-            <h4>CUHacking App</h4>
-          </a>
-          <p>
-            Fall 2017
-          </p>
-          <strong>Ruby on Rails, Android Studio, Heroku</strong>
-          <ul>
-          <li><span>Created for Carleton’s Hackathon. It will help participants navigate around the university as well as stay in contact with the organizers</span></li>
-          <li><span>Created and managed the database, which was built with <b>Ruby On Rails</b>. The database is stored on <b>Heroku</b></span></li>
-          <li><span>Worked as the backend deveoper on a four-person team</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/operation-skullrain.png" class="img-fluid img-thumbnail" alt="Operation Skullrain" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://github.com/Ershany/Operation_Skullrain" target="_blank">
-            <h4>Operation Skullrain</h4>
-          </a>
-          <p>
-            Fall 2017
-          </p>
-          <strong>C++, OpenGL</strong>
-          <ul>
-          <li><span>A helicopter shooter themed game built outside of an engine</span></li>
-          <li><span>Worked on a three-person development team</span></li>
-          <li><span>Worked on the game mechanics as well as integrating the models and their physics</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/daemonic-sword.png" class="img-fluid img-thumbnail" alt="Daemonic Sword" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://github.com/AngelOnFira/daemonic-sword-website" target="_blank">
-            <h4>Daemonic Sword Website</h4>
-          </a>
-          <p>
-            Fall 2017 - Present
-          </p>
-          <strong>HTML, CSS</strong>
-          <ul>
-          <li><span>Designed the new website</span></li>
-          <li><span>Refactored the layout of the website</span></li>
-          <li><span>Removed outdated information</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/carleton.jpg" class="img-fluid img-thumbnail" alt="Course Selection Tool" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://github.com/AngelOnFira/course-selection" target="_blank">
-            <h4>Course Selection Tool</h4>
-          </a>
-          <p>
-            April 2017 - Present
-          </p>
-          <strong>Flask, Ruby, Python, Javascript, HTML, CSS, MongoDB, AWS</strong>
-          <ul>
-          <li><span>A tool that allows students to sign up for courses more easily</span></li>
-          <li><span>Students can seach for courses using an autocomplete searchbox</span></li>
-          <li><span>Sample timetables can be made and easily changed</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/light-out.png" class="img-fluid img-thumbnail" alt="Light Out" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://globalgamejam.org/2017/games/lightout" target="_blank">
-            <h4>Light Out</h4>
-          </a>
-          <p>
-            January 2017
-          </p>
-          <strong>Godot, GDScript</strong>
-          <ul>
-          <li><span>Created for the Global Game Jam 2017</span></li>
-          <li><span>Worked on a three-person development team</span></li>
-          <li><span>Worked on the game mechanics and graphics</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/pebbles.png" class="img-fluid img-thumbnail" alt="Pebble Mosaic" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://pebblemosaicblog.wordpress.com/" target="_blank">
-            <h4>Pebble Mosaic</h4>
-          </a>
-          <p>
-            Summer 2016
-          </p>
-          <strong>C++, OpenCV</strong>
-          <ul>
-          <li><span>Created a pebble mosaic filter for digital photos</span></li>
-          <li><span>Written in <b>C++</b>, made use of <b>OpenCV</b> to manage and process the images</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/blank.png" class="img-fluid img-thumbnail" alt="Blank" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://globalgamejam.org/2016/games/blank" target="_blank">
-            <h4>_[Blank]</h4>
-          </a>
-          <p>
-            Jan 2016
-          </p>
-          <strong>Superpowers, Typescript</strong>
-          <ul>
-          <li><span>Created for the Global Game Jam 2016</span></li>
-          <li><span>Worked on a five-person development team</span></li>
-          <li><span>Worked on the game physics and design</span></li>
-          <ul>
-        </div>
-      </div>
-      <hr>
-      <div class="row justify-content-around">
-        <div class="location col-lg-4">
-          <img src="assets/images/projects/bloxheroes.jpg" class="img-fluid img-thumbnail" alt="Blox Heroes" >
-        </div>
-        <div class="col-lg-8">
-          <a href="https://github.com/AngelOnFira/oldbloxheros" target="_blank">
-            <h4>Blox Heroes</h4>
-          </a>
-          <p>
-            2009 - 2015
-          </p>
-          <strong>Blitz 3D</strong>
-          <ul>
-          <li><span>A local and online multiplayer "tag" game</span></li>
-          <li><span>Built custom netcode</span></li>
-          <li><span>Implemented mid-level physics and graphics</span></li>
-          <ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- define contact footer pane -->
-  <div id="contact" class="contact bg-dark">
-    <div class="container">
-      <h2>Contact</h2>
-      <hr>
-      <div class="row">
-        <div class="col-md-12 col-lg-4">
-          <a href="mailto:forestkzanderson@gmail.com">
-          <img src="assets/contact/at.svg">
-          <span>forestkzanderson@gmail.com</span>
-          </a>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <a href="https://github.com/AngelOnFira" target="_blank">
-          <img src="assets/contact/github-square.svg">
-          <span>github.com/AngelOnFira</span>
-          </a>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <a href="https://www.linkedin.com/in/forest-anderson" target="_blank">
-          <img src="assets/contact/linkedin-square.svg">
-          <span>linkedin.com/in/forest-anderson</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class='credit'>Website created by <a href='https://ericbellamy.ca'>Eric Bellamy</a></div>
+    </section>
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" type="text/css" href="/sites/forest/css/min/styles.css" />
+    </noscript>
+    <script>
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+    else window.addEventListener('load', loadDeferredStyles);
+
+    [
+        '/sites/forest/js/min/p5.min.js',
+        '/sites/forest/js/min/index.min.js',
+        '/sites/forest/js/min/imgtosvg.min.js', //--> Load svgs first
+        '/sites/forest/js/min/sketch.min.js',
+        '/sites/forest/js/min/lazyload.min.js',
+    ].forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+    });
+    </script>
+    <script type="text/javascript" async defer>
+    var adblock = true;
+    </script>
 </body>
+</html>
