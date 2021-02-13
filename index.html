@@ -151,149 +151,37 @@ layout: default
     </section>
     <section id='jobContainer'>
         <div id='jobList'>
+            {% for item in site.data.jobs %}
             <div class='job noselect'>
                 <div class='jobContent'>
                     <div class='companyContainer'>
                         <div class='name'>
-                            Timsle
-                            <div class='hi-light' data-text="Timsle"></div>
+                            {{ item.name }}
+                            <div class='hi-light' data-text="{{ item.name }}"></div>
                         </div>
                     </div>
                     <div class='dateContainer'>
-                        <div class='date'>July 2018</div>
+                        <div class='date'>{{ item.start_date }}</div>
                     </div>
                     <div class='dateContainer'>
-                        <div class='date'>Present</div>
+                        <div class='date'>{{ item.end_date }}</div>
                     </div>
                     <div class='shortDate'>
-                        <div class='date'>2018</div>
+                        <div class='date'>{{ item.short_date }}</div>
                     </div>
                     <div class='positionContainer'>
-                        <div class='position'>Backend Developer</div>
+                        <div class='position'>{{ item.position }}</div>
                     </div>
                 </div>
                 <div class='jobDesc'>
                     <div class='list'>
-                        <li>Migrated the backend stack to a new datacenter</li>
-                        <li>Added new functionality to the Django backend</li>
-                        <li>Integrated services that provided a platform to horizontally scale</li>
+                        {% for list_item in item.description %}
+                            <li>- {{ list_item }}</li>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class='job noselect'>
-                <div class='jobContent'>
-                    <div class='companyContainer'>
-                        <div class='name'>
-                            Timsle
-                            <div class='hi-light' data-text="Timsle"></div>
-                        </div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>July 2018</div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>Present</div>
-                    </div>
-                    <div class='shortDate'>
-                        <div class='date'>2018</div>
-                    </div>
-                    <div class='positionContainer'>
-                        <div class='position'>Backend Developer</div>
-                    </div>
-                </div>
-                <div class='jobDesc'>
-                    <div class='list'>
-                        <li>Migrated the backend stack to a new datacenter</li>
-                        <li>Added new functionality to the Django backend</li>
-                        <li>Integrated services that provided a platform to horizontally scale</li>
-                    </div>
-                </div>
-            </div>
-            <div class='job noselect'>
-                <div class='jobContent'>
-                    <div class='companyContainer'>
-                        <div class='name'>
-                            Scholarpro
-                            <div class='hi-light' data-text="Scholarpro"></div>
-                        </div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>December 2017</div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>Febuary 2017</div>
-                    </div>
-                    <div class='shortDate'>
-                        <div class='date'>2017</div>
-                    </div>
-                    <div class='positionContainer'>
-                        <div class='position'> Backend Developer</div>
-                    </div>
-                </div>
-                <div class='jobDesc'>
-                    <div class='list'>
-                        <li>Worked on a website to match students with applicable scholarships</li>
-                        <li>Used the Meteor framework for Node.js to build a prototype</li>
-                        <li>Created and managed a MongoDB database that held the scholarships</li>
-                    </div>
-                </div>
-            </div>
-            <div class='job'>
-                <div class='jobContent'>
-                    <div class='companyContainer'>
-                        <div class='name'>
-                            Children's Hospital of Eastern Ontario
-                            <div class='hi-light' data-text="Children's Hospital of Eastern Ontario"></div>
-                        </div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>June 2017</div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>August 2017</div>
-                    </div>
-                    <div class='shortDate'>
-                        <div class='date'>2017</div>
-                    </div>
-                    <div class='positionContainer'>
-                        <div class='position'>Summer Research Student</div>
-                    </div>
-                </div>
-                <div class='jobDesc'>
-                    <div class='list'>
-                        <li>Worked with the Pathology lab to create cross sections of procedurally generated models of the placenta</li>
-                        <li>Used OpenGL and C++ to create the cross sections</li>
-                    </div>
-                </div>
-            </div>
-            <div class='job'>
-                <div class='jobContent'>
-                    <div class='companyContainer'>
-                        <div class='name'>
-                            Graphics, Imaging, and Games Lab
-                            <div class='hi-light' data-text="Graphics, Imaging, and Games Lab"></div>
-                        </div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>May 2016</div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>August 2016</div>
-                    </div>
-                    <div class='shortDate'>
-                        <div class='date'>2016</div>
-                    </div>
-                    <div class='positionContainer'>
-                        <div class='position'>Dean’s Summer Research Internship Student</div>
-                    </div>
-                </div>
-                <div class='jobDesc'>
-                    <div class='list'>
-                        <li>Created a pebble mosaic filter for digital photos</li>
-                        <li>Written in C++, made use of OpenCV to manage and process the images</li>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <section id='contactContainer'>

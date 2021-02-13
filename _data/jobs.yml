@@ -1,0 +1,37 @@
+- name: Timsle
+  start_date: July 2018
+  end_date: Present
+  short_date: 2018
+  position: Backend Developer
+  description:
+    - Migrated the backend stack to a new datacenter
+    - Added new functionality to the Django backend
+    - Integrated services that provided a platform to horizontally scale
+
+- name: Scholarpro
+  start_date: December 2017
+  end_date: Febuary 2017
+  short_date: 2017
+  position: Backend Developer
+  description:
+    - Worked on a website to match students with applicable scholarships
+    - Used the Meteor framework for Node.js to build a prototype
+    - Created and managed a MongoDB database that held the scholarships
+
+- name: Children's Hospital of Eastern Ontario
+  start_date: June 2017
+  end_date: August 2017
+  short_date: 2017
+  position: Summer Research Student
+  description:
+    - Worked with the Pathology lab to create cross sections of procedurally generated models of the placenta
+    - Used OpenGL and C++ to create the cross sections
+
+- name: Graphics, Imaging, and Games Lab
+  start_date: May 2016
+  end_date: August 2016
+  short_date: 2016
+  position: Dean’s Summer Research Internship Student
+  description:
+    - Created a pebble mosaic filter for digital photos
+    - Written in C++, made use of OpenCV to manage and process the images
