@@ -1,0 +1,47 @@
+- title: Forces Divided
+  subtitle: Spring 2018
+  link: https://github.com/AngelOnFira/forces-divided
+  img: forces-divided.png
+  languages: Unity, C#
+  description:
+    - An RTS game build in Unity
+    - Worked on game mechanics and managing the 3-person team
+
+- title: Operation Skullrain
+  subtitle: Fall 2017
+  link: https://github.com/Ershany/Operation_Skullrain
+  img: operation-skullrain.jpg
+  languages: C++, OpenGL
+  description:
+    - A helicopter shooter themed game built outside of an engine
+    - Worked on a three-person development team
+    - Worked on the game mechanics as well as integrating the models and their physics
+
+- title: Light Out
+  subtitle: January 2017
+  link: https://globalgamejam.org/2017/games/lightout
+  img: light-out.jpg
+  languages: Godot, GDScript
+  description:
+    - Created for the Global Game Jam 2017
+    - Worked on a three-person development team
+    - Worked on the game mechanics and graphics
+
+- title: Pebble Mosaic
+  subtitle: Summer 2016
+  link: https://pebblemosaicblog.wordpress.com/
+  img: pebbles.jpg
+  languages: C++, OpenCV
+  description:
+    - Created a pebble mosaic filter for digital photos
+    - Written in C++, made use of OpenCV to manage and process the images
+
+- title: _[Blank]
+  subtitle: Jan 2016
+  link: https://globalgamejam.org/2016/games/blank
+  img: blank.jpg
+  languages: Superpowers, Typescript
+  description:
+    - Created for the Global Game Jam 2016
+    - Worked on a five-person development team
+    - Worked on the game physics and design
