@@ -1,7 +1,7 @@
 - title: Forces Divided
   subtitle: Spring 2018
   link: https://github.com/AngelOnFira/forces-divided
-  img: forces-divided.jpg
+  img: forces_divided.jpg
   languages: Unity, C#
   description:
     - An RTS game build in Unity
@@ -10,7 +10,7 @@
 - title: Operation Skullrain
   subtitle: Fall 2017
   link: https://github.com/Ershany/Operation_Skullrain
-  img: operation-skullrain.jpg
+  img: operation_skullrain.jpg
   languages: C++, OpenGL
   description:
     - A helicopter shooter themed game built outside of an engine
@@ -20,7 +20,7 @@
 - title: Light Out
   subtitle: January 2017
   link: https://globalgamejam.org/2017/games/lightout
-  img: light-out.jpg
+  img: light_out.jpg
   languages: Godot, GDScript
   description:
     - Created for the Global Game Jam 2017
