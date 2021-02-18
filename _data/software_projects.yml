@@ -1,12 +1,39 @@
+- title: Jupyter Notebook Cluster
+  subtitle: September 2020
+  link: ""
+  img: jupyter.jpg
+  languages: Jupyter, Traefik, OpenStack, Prometheus
+  description:
+      - Deployed Jupyter to servers to be used for first year computer science tutorials
+      - Monitored server performance with Prometheus and Grafana
+
+- title: Discrete Math Center
+  subtitle: August 2020
+  link: https://discretemath.ca/#/
+  img: discretemath.jpg
+  languages: Docker, Traefik, OpenStack
+  description:
+      - Deployed suite of websites created by the Carleton Computer Science Society to the School of Computer Science OpenStack cluster
+      - Designed sustainable architecture-from-code to keep software running and maintainable
+
+- title: Create Envfile
+  subtitle: August 2019
+  link: https://github.com/SpicyPizza/create-envfile
+  img: create_envfile.jpg
+  languages: Python, Docker
+  description:
+      - A Github Action to pull environments from Github secrets and create an envfile
+      - Uses a Python script to build the file, runs in a Docker container
+
 - title: Miracle Merchant AI
   subtitle: Spring 2018
   link: https://github.com/AngelOnFira/Miracle-Merchant-AI
   img: miraclemerchant.jpg
   languages: Python, Jupyter Notebook, Plotly
   description:
-    - An AI created for the mobile game "Miracle Merchant"
-    - Created in Python with data visualization done using Plotly and Jupyter Notebook
-    - Wrote a paper detailing my method and results
+      - An AI created for the mobile game "Miracle Merchant"
+      - Created in Python with data visualization done using Plotly and Jupyter Notebook
+      - Wrote a paper detailing my method and results
 
 - title: CUHacking App
   subtitle: Fall 2017
@@ -14,19 +41,19 @@
   img: cuhlogo.jpg
   languages: Ruby on Rails, Android Studio, Heroku
   description:
-    - Created for Carleton’s Hackathon. It will help participants navigate around the university as well as stay in contact with the organizers
-    - Created and managed the database, which was built with Ruby On Rails. The database is stored on Heroku
-    - Worked as the backend developer on a four-person team
+      - Created for Carleton’s Hackathon. It will help participants navigate around the university as well as stay in contact with the organizers
+      - Created and managed the database, which was built with Ruby On Rails. The database is stored on Heroku
+      - Worked as the backend developer on a four-person team
 
 - title: Daemonic Sword Website
   subtitle: Fall 2017
   link: https://github.com/AngelOnFira/daemonic-sword-website
-  img: daemonic-sword.jpg
+  img: daemonic_sword.jpg
   languages: HTML, CSS
   description:
-    - Designed the new website
-    - Refactored the layout of the website
-    - Removed outdated information
+      - Designed the new website
+      - Refactored the layout of the website
+      - Removed outdated information
 
 - title: Course Selection Tool
   subtitle: Summer 2017
@@ -34,6 +61,6 @@
   img: carleton.jpg
   languages: Flask, Ruby, Python, Javascript, HTML, CSS, MongoDB, AWS
   description:
-    - A tool that allows students to create timetables for courses more easily
-    - Students can seach for courses using an autocomplete searchbox
-    - Sample timetables can be made and easily changed
+      - A tool that allows students to create timetables for courses more easily
+      - Students can seach for courses using an autocomplete searchbox
+      - Sample timetables can be made and easily changed

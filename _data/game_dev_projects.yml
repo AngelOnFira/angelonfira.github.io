@@ -1,11 +1,40 @@
+- title: A Loss for Words
+  subtitle: Global Game Jam January 2021
+  link: https://globalgamejam.org/2021/games/loss-words-2
+  img: loss_for_words.jpg
+  languages: Godot
+  description_text: A Loss For Words is a text-adventure inspired narrative puzzle game, with a twist. Start your journey as the unknown scholar, running for your life from unseen forces. As you enter the temple, your mind wanders, and you begin inexplicably losing time.
+
+- title: Transit Panic
+  subtitle: Global Game Jam January 2020
+  link: https://globalgamejam.org/2020/games/transit-panic-8
+  img: transit_panic.jpg
+  languages: Godot
+  description_text: You're in charge of a city's dilapidated transit team. You've been tasked with making it reasonably usable. How hard can it be?
+
+- title: Agglomeration
+  subtitle: Global Game Jam January 2019
+  link: https://globalgamejam.org/2019/games/agglomeration
+  img: agglomeration.jpg
+  languages: Godot
+  description_text: In everyday life, you have to do a lot of tasks. Cleaning your room, taking a bath, and feeding your cat to name a few. But what about when you start slacking on these tasks?
+
+- title: Red Pigeon Rising
+  subtitle: January 2018
+  link: https://globalgamejam.org/2018/games/red-pigeon-rising
+  img: red_pigeon_rising.jpg
+  languages: Godot
+  description:
+      - Built in Godot for the 2018 Global Game Jam
+
 - title: Forces Divided
   subtitle: Spring 2018
   link: https://github.com/AngelOnFira/forces-divided
   img: forces_divided.jpg
   languages: Unity, C#
   description:
-    - An RTS game build in Unity
-    - Worked on game mechanics and managing the 3-person team
+      - An RTS game build in Unity
+      - Worked on game mechanics and managing the 3-person team
 
 - title: Operation Skullrain
   subtitle: Fall 2017
@@ -13,9 +42,9 @@
   img: operation_skullrain.jpg
   languages: C++, OpenGL
   description:
-    - A helicopter shooter themed game built outside of an engine
-    - Worked on a three-person development team
-    - Worked on the game mechanics as well as integrating the models and their physics
+      - A helicopter shooter themed game built outside of an engine
+      - Worked on a three-person development team
+      - Worked on the game mechanics as well as integrating the models and their physics
 
 - title: Light Out
   subtitle: January 2017
@@ -23,9 +52,9 @@
   img: light_out.jpg
   languages: Godot, GDScript
   description:
-    - Created for the Global Game Jam 2017
-    - Worked on a three-person development team
-    - Worked on the game mechanics and graphics
+      - Created for the Global Game Jam 2017
+      - Worked on a three-person development team
+      - Worked on the game mechanics and graphics
 
 - title: Pebble Mosaic
   subtitle: Summer 2016
@@ -33,8 +62,8 @@
   img: pebbles.jpg
   languages: C++, OpenCV
   description:
-    - Created a pebble mosaic filter for digital photos
-    - Written in C++, made use of OpenCV to manage and process the images
+      - Created a pebble mosaic filter for digital photos
+      - Written in C++, made use of OpenCV to manage and process the images
 
 - title: _[Blank]
   subtitle: Jan 2016
@@ -42,6 +71,13 @@
   img: blank.jpg
   languages: Superpowers, Typescript
   description:
-    - Created for the Global Game Jam 2016
-    - Worked on a five-person development team
-    - Worked on the game physics and design
+      - Created for the Global Game Jam 2016
+      - Worked on a five-person development team
+      - Worked on the game physics and design
+
+- title: Blox Heroes
+  subtitle: August 2011
+  link: https://github.com/AngelOnFira/Blox-Heroes
+  img: bloxheroes.jpg
+  languages: Blitz3D
+  description_text: A project that I started in high school. Created a 3D game where two players could play tag.

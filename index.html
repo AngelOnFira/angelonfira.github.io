@@ -4,241 +4,353 @@ permalink: /index.html
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf8" />
-    <meta http-equiv="Content-Language" content="en_CA" />
-    <meta property="og:url" content="https://www.forest-anderson.ca" />
-    <meta property="og:type" content="portfolio" />
-    <meta property="og:title" content="Forest Anderson - Backend Developer" />
-    <meta property="og:description" content="A developer specializing in image processing and backend development." />
-    <meta property="og:image" content="" />
-    <meta name="keywords" content="forest anderson, forestanderson, person, software developer, software engineer, ottawa, canada, carleton, carleton university" />
-    <title>Forest Anderson - Backend Developer</title>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-</head>
+    <head>
+        <meta charset="utf8" />
+        <meta http-equiv="Content-Language" content="en_CA" />
+        <meta property="og:url" content="https://www.forest-anderson.ca" />
+        <meta property="og:type" content="portfolio" />
+        <meta
+            property="og:title"
+            content="Forest Anderson - Backend Developer"
+        />
+        <meta
+            property="og:description"
+            content="A developer specializing in image processing and backend development."
+        />
+        <meta property="og:image" content="" />
+        <meta
+            name="keywords"
+            content="forest anderson, forestanderson, person, software developer, software engineer, ottawa, canada, carleton, carleton university"
+        />
+        <title>Forest Anderson - Backend Developer</title>
+        <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
+        />
+        <link rel="stylesheet" href="test.css" />
+    </head>
 
-<body>
-    <nav>
-        <div id='navContainer'>
-            <div id='navSocials' class='noselect'>
-                <a class='navSocial githubSocial' href='https://github.com/AngelOnFira' target='_blank'>
-                    <div class='svg' src='/ic/social-github.svg'></div>
-                </a>
-                <a class='navSocial' href='https://www.linkedin.com/in/forest-anderson/' target='_blank'>
-                    <div class='svg' src='/ic/social-linkedin.svg'></div>
-                </a>
-            </div>
-            <ul id='navList'>
-                <li class='navOption' data-name='about'>About</li>
-                <li class='navOption' data-name='work'>Projects</li>
-                <li class='navOption' data-name='job'>Experience</li>
-                <li class='navOption' data-name='contact'>Contact</li>
-            </ul>
-        </div>
-    </nav>
-    <section id='displayContainer'>
-        <div id='canvasContainer'>
-            <div id='canvasBackground'></div>
-            <div class='center-s' id='canvasText'>
-                <div id='canvasTitle'>Forest Anderson</div>
-                <div id='canvasSubtitle'>Game and Software Developer</div>
-            </div>
-        </div>
-    </section>
-    <section id='aboutContainer'>
-        <div id='aboutContent' class='pageContent'>
-            <div id='aboutHeader'>
-                <div class='left'>
-                    <img data-lazysrc='/img/opt/profile2.jpg' />
-                </div>
-                <div class='right'>
-                    <div id='aboutSocials' class='noselect'>
-                        <a class='navSocial githubSocial' href='https://github.com/AngelOnFira' target='_blank'>
-                            <div class='svg' src='/ic/social-github.svg'></div>
-                        </a>
-                        <a class='navSocial' href='https://www.linkedin.com/in/forest-anderson/' target='_blank'>
-                            <div class='svg' src='/ic/social-linkedin.svg'></div>
-                        </a>
-                    </div>
-                    <div id='aboutDescs'>
-                        <div id='aboutJob'>Developer at <span>Timsle</span></div>
-                        <div id='aboutTitle'>Forest Anderson</div>
-                    </div>
-                </div>
-            </div>
-            <div id='aboutBody'>
-                <div class='left'>
-                    <div class='title'>Summary</div>
-                    <div id='aboutDesc'>
-                        I'm a 4th year computer science student at Carleton University, with honours in Game Development. I have done research at Carleton in the field of image processing. I have many sideprojects that I have worked on. Some topics I'm interested in include game development, graphics, and security.
-                        <br>
-                        <br> I co-lead the Lame Jam, a game jam at Carleton University. I co-lead Hack All The Things, an Ottawa-based security competition. I have been an executive member of the Carleton Computer Science Society for four years.
-                    </div>
-                </div>
-                <div class='right'>
-                    <ul class='aboutList'>
-                        <li class='title'>Volunteer</li>
-                        <li>VP Academic of Carleton Computer Science Society</li>
-                        <li>Co-lead of Hack All the Things Ottawa</li>
-                        <li>Co-lead of the Carleton Lame Jam</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id='workContainer' class='softwareList'>
-        <div class='pageContent'>
-            <div id='workHeader'>
-                <div class='top'>
-                    <div id='workHeaderDesc'>Recent Projects</div>
-                    <div id='workToggles'>
-                        <div class='workToggle click' data-name='software'>Software</div>
-                        <div class='workToggle' data-name='gamedev'>Game Dev</div>
-                    </div>
-                </div>
-                <div class='bottom'>
-                    <a class='workToggle' id='workGithubToggle' href='https://www.github.com/AngelOnFira' target='_blank'>Github</a>
-                </div>
-                <div class='divider'></div>
-            </div>
-            <div id='softwareList' class='workList'>
-                {% for item in site.data.software_projects %}
-                    <div class='work'>
-                        <div class='workBottomBorder'></div>
-                        <div class='workTopBorder'></div>
-                        <div class='workImg'>
-                            <img data-lazysrc='/img/opt/{{ item.img }}' />
-                        </div>
-                        <div class='workContent'>
-                            <a class='workTitle' href='{{ item.link }}' target='_blank'>{{ item.title }}<div class='hi-light' data-text="{{ item.title }}"></div></a>
-                            <div class='workSubtitle'>{{ item.subtitle }}</div>
-                            <div class='workLanguages'>{{ item.languages }}</div>
-                            <ul class='list'>
-                                {% for list_item in item.description %}
-                                <li>- {{ list_item }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+    <body>
+        <nav>
+            <div id="navContainer">
+                <div id="navSocials" class="noselect">
+                    <a
+                        class="navSocial githubSocial"
+                        href="https://github.com/AngelOnFira"
+                        target="_blank"
+                    >
+                        <div class="svg" src="/ic/social-github.svg"></div>
                     </a>
-                {% endfor %}
-            </div>
-            <div id='gamedevList' class='workList'>
-                {% for item in site.data.game_dev_projects %}
-                    <div class='work INVIEW'>
-                        <div class='workBottomBorder'></div>
-                        <div class='workTopBorder'></div>
-                        <div class='workImg'>
-                            <img data-lazysrc='/img/opt/{{ item.img }}' />
-                        </div>
-                        <div class='workContent'>
-                            <a class='workTitle' href='{{ item.link }}' target='_blank'>{{ item.title }}<div class='hi-light' data-text="{{ item.title }}"></div></a>
-                            <div class='workSubtitle'>{{ item.subtitle }}</div>
-                            <div class='workLanguages'>{{ item.languages }}</div>
-                            <ul class='list'>
-                                {% for list_item in item.description %}
-                                <li>- {{ list_item }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
+                    <a
+                        class="navSocial"
+                        href="https://www.linkedin.com/in/forest-anderson/"
+                        target="_blank"
+                    >
+                        <div class="svg" src="/ic/social-linkedin.svg"></div>
                     </a>
-                {% endfor %}
+                </div>
+                <ul id="navList">
+                    <li class="navOption" data-name="about">About</li>
+                    <li class="navOption" data-name="work">Projects</li>
+                    <li class="navOption" data-name="job">Experience</li>
+                    <li class="navOption" data-name="contact">Contact</li>
+                </ul>
             </div>
-        </div>
-    </section>
-    <section id='jobContainer'>
-        <div id='jobList'>
-            {% for item in site.data.jobs %}
-            <div class='job noselect'>
-                <div class='jobContent'>
-                    <div class='companyContainer'>
-                        <div class='name'>
-                            {{ item.name }}
-                            <div class='hi-light' data-text="{{ item.name }}"></div>
+        </nav>
+        <section id="displayContainer">
+            <div id="canvasContainer">
+                <div id="canvasBackground"></div>
+                <div class="center-s" id="canvasText">
+                    <div id="canvasTitle">Forest Anderson</div>
+                    <div id="canvasSubtitle">Game and Software Developer</div>
+                </div>
+            </div>
+        </section>
+        <section id="aboutContainer">
+            <div id="aboutContent" class="pageContent">
+                <div id="aboutHeader">
+                    <div class="left">
+                        <img data-lazysrc="/img/opt/profile2.jpg" />
+                    </div>
+                    <div class="right">
+                        <div id="aboutSocials" class="noselect">
+                            <a
+                                class="navSocial githubSocial"
+                                href="https://github.com/AngelOnFira"
+                                target="_blank"
+                            >
+                                <div
+                                    class="svg"
+                                    src="/ic/social-github.svg"
+                                ></div>
+                            </a>
+                            <a
+                                class="navSocial"
+                                href="https://www.linkedin.com/in/forest-anderson/"
+                                target="_blank"
+                            >
+                                <div
+                                    class="svg"
+                                    src="/ic/social-linkedin.svg"
+                                ></div>
+                            </a>
                         </div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>{{ item.start_date }}</div>
-                    </div>
-                    <div class='dateContainer'>
-                        <div class='date'>{{ item.end_date }}</div>
-                    </div>
-                    <div class='shortDate'>
-                        <div class='date'>{{ item.short_date }}</div>
-                    </div>
-                    <div class='positionContainer'>
-                        <div class='position'>{{ item.position }}</div>
+                        <div id="aboutDescs">
+                            <div id="aboutJob">
+                                Developer at <span>Timsle</span>
+                            </div>
+                            <div id="aboutTitle">Forest Anderson</div>
+                        </div>
                     </div>
                 </div>
-                <div class='jobDesc'>
-                    <div class='list'>
-                        {% for list_item in item.description %}
+                <div id="aboutBody">
+                    <div class="left">
+                        <div class="title">Summary</div>
+                        <div id="aboutDesc">
+                            I'm a 4th year computer science student at Carleton
+                            University, with honours in Game Development. I have
+                            done research at Carleton in the field of image
+                            processing. I have many sideprojects that I have
+                            worked on. Some topics I'm interested in include
+                            game development, graphics, and security.
+                            <br />
+                            <br />
+                            I co-lead the Lame Jam, a game jam at Carleton
+                            University. I co-lead Hack All The Things, an
+                            Ottawa-based security competition. I have been an
+                            executive member of the Carleton Computer Science
+                            Society for four years.
+                        </div>
+                    </div>
+                    <div class="right">
+                        <ul class="aboutList">
+                            <li class="title">Volunteer</li>
+                            <li>
+                                VP Academic of Carleton Computer Science Society
+                            </li>
+                            <li>Co-lead of Hack All the Things Ottawa</li>
+                            <li>Co-lead of the Carleton Lame Jam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="workContainer" class="softwareList">
+            <div class="pageContent">
+                <div id="workHeader">
+                    <div class="top">
+                        <div id="workHeaderDesc">Recent Projects</div>
+                        <div id="workToggles">
+                            <div class="workToggle click" data-name="software">
+                                Software
+                            </div>
+                            <div class="workToggle" data-name="gamedev">
+                                Game Dev
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <a
+                            class="workToggle"
+                            id="workGithubToggle"
+                            href="https://www.github.com/AngelOnFira"
+                            target="_blank"
+                            >Github</a
+                        >
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div id="softwareList" class="workList">
+                    {% for item in site.data.software_projects %}
+                    <a href="{{ item.link }}" target="_blank">
+                        <div class="work">
+                            <div class="workBottomBorder"></div>
+                            <div class="workTopBorder"></div>
+                            <div class="workImg">
+                                <img data-lazysrc="/img/opt/{{ item.img }}" />
+                            </div>
+                            <div class="workContent">
+                                <u class="workTitle"
+                                    >{{ item.title }}
+                                    <div
+                                        class="hi-light"
+                                        data-text="{{ item.title }}"
+                                    ></div>
+                                </u>
+                                <div class="workSubtitle">
+                                    {{ item.subtitle }}
+                                </div>
+                                <div class="workLanguages">
+                                    {{ item.languages }}
+                                </div>
+                                <ul class="list">
+                                    {% for list_item in item.description %}
+                                    <li>- {{ list_item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div id="gamedevList" class="workList">
+                    {% for item in site.data.game_dev_projects %}
+                    <a href="{{ item.link }}" target="_blank">
+                        <div class="work INVIEW">
+                            <div class="workBottomBorder"></div>
+                            <div class="workTopBorder"></div>
+                            <div class="workImg">
+                                <img data-lazysrc="/img/opt/{{ item.img }}" />
+                            </div>
+                            <div class="workContent">
+                                <u class="workTitle"
+                                    >{{ item.title }}
+                                    <div
+                                        class="hi-light"
+                                        data-text="{{ item.title }}"
+                                    ></div>
+                                </u>
+                                <div class="workSubtitle">
+                                    {{ item.subtitle }}
+                                </div>
+                                <div class="workLanguages">
+                                    {{ item.languages }}
+                                </div>
+                                {% if item.description_text %}
+                                <div id="aboutDesc">
+                                    <br />
+                                    {{ item.description_text }}
+                                </div>
+                                {% endif %}
+                                <ul class="list">
+                                    {% for list_item in item.description %}
+                                    <li>- {{ list_item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section id="jobContainer">
+            <div id="jobList">
+                {% for item in site.data.jobs %}
+                <div class="job noselect">
+                    <div class="jobContent">
+                        <div class="companyContainer">
+                            <div class="name">
+                                {{ item.name }}
+                                <div
+                                    class="hi-light"
+                                    data-text="{{ item.name }}"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="dateContainer">
+                            <div class="date">{{ item.start_date }}</div>
+                        </div>
+                        <div class="dateContainer">
+                            <div class="date">{{ item.end_date }}</div>
+                        </div>
+                        <div class="shortDate">
+                            <div class="date">{{ item.short_date }}</div>
+                        </div>
+                        <div class="positionContainer">
+                            <div class="position">{{ item.position }}</div>
+                        </div>
+                    </div>
+                    <div class="jobDesc">
+                        <div class="list">
+                            {% for list_item in item.description %}
                             <li>- {{ list_item }}</li>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-    </section>
-    <section id='contactContainer'>
-        <div id='contactWrapper'>
-            <div id='contactTop'>
-                <div id='contactIcon' class='svg' src='/ic/contact.svg'></div>
-                <div id='contactTitle'>
-                    <div class='text'>Contact</div>
-                </div>
-            </div>
-            <div id='contactCenter'>
-                <div id='contactText'>
-                    <div id='contactBody'>
-                        <div class='title'>Got an interesting project or idea?</div>
-                        <br>
-                        Send me a <a href='mailto:forestkzanderson@gmail.com'>message.</a>
-                    </div>
-                    <div id='contactLinks'>
-                        <a href='https://www.github.com/AngelOnFira'>Github</a>
-                        <a href='https://www.linkedin.com/in/forest-anderson/'>LinkedIn</a>
+        </section>
+        <section id="contactContainer">
+            <div id="contactWrapper">
+                <div id="contactTop">
+                    <div
+                        id="contactIcon"
+                        class="svg"
+                        src="/ic/contact.svg"
+                    ></div>
+                    <div id="contactTitle">
+                        <div class="text">Contact</div>
                     </div>
                 </div>
+                <div id="contactCenter">
+                    <div id="contactText">
+                        <div id="contactBody">
+                            <div class="title">
+                                Got an interesting project or idea?
+                            </div>
+                            <br />
+                            Send me a
+                            <a href="mailto:forestkzanderson@gmail.com"
+                                >message.</a
+                            >
+                        </div>
+                        <div id="contactLinks">
+                            <a href="https://www.github.com/AngelOnFira"
+                                >Github</a
+                            >
+                            <a
+                                href="https://www.linkedin.com/in/forest-anderson/"
+                                >LinkedIn</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div id="contactBottom"></div>
             </div>
-            <div id='contactBottom'></div>
-        </div>
-        <div class='credit'>Website created by <a href='https://ericbellamy.ca'>Eric Bellamy</a></div>
-    </section>
-    <noscript id="deferred-styles">
-        <link rel="stylesheet" type="text/css" href="/css/min/styles.css" />
-    </noscript>
-    <script>
-    var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement)
-        addStylesNode.parentElement.removeChild(addStylesNode);
-    };
-    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-        window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-    else window.addEventListener('load', loadDeferredStyles);
+            <div class="credit">
+                Website created by
+                <a href="https://ericbellamy.ca">Eric Bellamy</a>
+            </div>
+        </section>
+        <noscript id="deferred-styles">
+            <link rel="stylesheet" type="text/css" href="/css/min/styles.css" />
+        </noscript>
+        <script>
+            var loadDeferredStyles = function () {
+                var addStylesNode = document.getElementById("deferred-styles");
+                var replacement = document.createElement("div");
+                replacement.innerHTML = addStylesNode.textContent;
+                document.body.appendChild(replacement);
+                addStylesNode.parentElement.removeChild(addStylesNode);
+            };
+            var raf =
+                window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame;
+            if (raf)
+                raf(function () {
+                    window.setTimeout(loadDeferredStyles, 0);
+                });
+            else window.addEventListener("load", loadDeferredStyles);
 
-    [
-        '/js/min/p5.min.js',
-        '/js/min/index.min.js',
-        '/js/min/imgtosvg.min.js', //--> Load svgs first
-        '/js/min/sketch.min.js',
-        '/js/min/lazyload.min.js',
-    ].forEach(function(src) {
-        var script = document.createElement('script');
-        script.src = src;
-        script.async = false;
-        document.head.appendChild(script);
-    });
-    </script>
-    <script type="text/javascript" async defer>
-    var adblock = true;
-    </script>
-</body>
+            [
+                "/js/min/p5.min.js",
+                "/js/min/index.min.js",
+                "/js/min/imgtosvg.min.js", //--> Load svgs first
+                "/js/min/sketch.min.js",
+                "/js/min/lazyload.min.js",
+            ].forEach(function (src) {
+                var script = document.createElement("script");
+                script.src = src;
+                script.async = false;
+                document.head.appendChild(script);
+            });
+        </script>
+        <script type="text/javascript" async defer>
+            var adblock = true;
+        </script>
+    </body>
 </html>
